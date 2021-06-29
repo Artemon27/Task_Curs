@@ -11,6 +11,7 @@ class Valute extends Model
 
     protected $list = array();
 
+    /*ѕолучение курсов на заданный день*/
     public function loads($time)
     {
         $xml = new \DOMDocument();
@@ -35,7 +36,7 @@ class Valute extends Model
         else
             return false;
     }
-
+    /*ѕолучение курса выбранной валюты из загруженной таблицы*/
     public function get($cur)
     {
         return isset($this->list[$cur]) ? $this->list[$cur] : 0;
